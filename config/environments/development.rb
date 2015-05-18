@@ -47,6 +47,6 @@ Rails.application.configure do
   # Whether or not to require account activation by email notification
   config.x.validate_account_activation = false
   # Title of this app (for window titles, etc)
-  config.x.app_title = "Starter App"
+  config.x.app_title = "Tracky (dev)"
 
 end

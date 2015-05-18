@@ -43,6 +43,6 @@ Rails.application.configure do
 
   # Custom
   config.x.validate_account_activation = true
-  config.x.app_title = "Starter App"
+  config.x.app_title = "Tracky (test)"
 
 end
