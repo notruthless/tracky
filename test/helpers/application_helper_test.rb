@@ -2,8 +2,9 @@ require 'test_helper'
 
 class ApplicationHelperTest < ActionView::TestCase
   test "full title helper" do
-    ENV['TITLE'] = 'MyTitle'
-    assert_equal full_title,         ENV['TITLE']
-    assert_equal full_title("Help"), "Help | #{ENV['TITLE']}"
+    title = "My Title"
+    Rails.configuration.x.app_title = "My Title"
+    assert_equal full_title,  title
+    assert_equal full_title("Help"), "Help | #{title}"
   end
 end

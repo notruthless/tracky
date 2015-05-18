@@ -1,9 +1,9 @@
-<h1>Starter App</h1>
+<h1><%= base_app_title %></h1>
 
 <p>Hi <%= @user.name %>,</p>
 
 <p>
-  Welcome to the Starter App! Click on the link below to activate your account:
+  Welcome to <%= base_app_title %>! Click on the link below to activate your account:
 </p>
 
 <%= link_to "Activate", edit_account_activation_url(@user.activation_token,
