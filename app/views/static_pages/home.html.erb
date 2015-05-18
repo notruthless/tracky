@@ -1,0 +1,8 @@
+<div class="center jumbotron">
+  <h1>Welcome to the Starter App</h1>
+  <% if !logged_in? %>
+
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  <% end %>
+</div>
+
