@@ -7,19 +7,14 @@
     <%= link_to task.owner.name, task.owner %>
   </td>
   <td>
+    <%# For now, have it just go to the user's page where you can
+        see all their assigned tasks %>
     <% if task.assignee %>
-        <%# TODO: Make these into popups that edit the assignee in place! %>
-        <%= if current_user.admin?
-               link_to task.assignee.name, edit_task_path(task)
-            elsif current_user == task.assignee
-              link_to task.assignee.name, edit_task_path(task)
-            else
-                task.assignee.name
-            end %>
-
+        <%= link_to task.assignee.name, task.assignee %>
     <% else %>
-        <%# TODO: Only let users assign themselves unless admin! %>
-        <em><%= link_to "Not assigned", edit_task_path(task)%></em>
+        <em>Not assigned</em>
     <% end %>
+
+    <%# TODO: Make this a popup that edits the assignee in place, depending on user and permissions%>
   </td>
 </tr>
