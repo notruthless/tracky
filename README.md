@@ -22,8 +22,14 @@ Simplifying design decisions
 ###Configuration settings:
 ```
     # whether to send a validation email for new accounts
+    # (currently set to false for demo usage)
   Rails.configuration.x.validate_account_activation = false
-
-    # the name of the app (to use for the title, etc)
-  Rails.configuration.x.app_title = "Starter App"
 ```
+### To Do:
+- Lots and lots and lots of clean up.
+- Don't let users edit and assign tasks created by other people. (yeah that's a big one)
+- More clean up
+- View tests for the task views and related integration tests
+- Didn't even look at window resize behavior except to see it's wrong.
+- Boy it's ugly
+- Better navigation - back buttons, cancel buttons, stuff like that.
