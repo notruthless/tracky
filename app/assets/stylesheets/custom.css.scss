@@ -162,7 +162,7 @@ aside {
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 100%;
+ /* width: 100%; */
   margin-bottom: 15px;
   @include box_sizing;
 }
@@ -211,3 +211,36 @@ input {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+
+/* task list */
+
+
+  .tasks {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .label {
+    font-weight: bold;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+
+}
+
+
+/* show task */
+.task-label {
+  font-weight:bold;
+}
+
+
+.form-button {
+  padding_top:5px;
+  padding_bottom:5px;
+}
+

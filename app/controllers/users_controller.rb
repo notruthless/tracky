@@ -9,11 +9,13 @@ class UsersController < ApplicationController
 
   def index
     @users = User.paginate(page: params[:page])
-
   end
 
   def show
     @user = User.find(params[:id])
+    # should paginate the tasks here
+    @assigned_tasks = @user.assigned_tasks
+    @owned_tasks = @user.owned_tasks
   end
 
   def create
@@ -79,9 +81,9 @@ class UsersController < ApplicationController
       redirect_to(root_url) unless current_user?(@user)
     end
 
-  def admin_user
-    redirect_to(root_url) unless current_user.admin?
-  end
+    def admin_user
+      redirect_to(root_url) unless current_user.admin?
+    end
 
 
 

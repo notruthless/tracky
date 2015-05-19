@@ -1,0 +1,23 @@
+<li id="task-<%= task.id %>">
+  <div class="col-md-4">
+    <%= link_to(task) do %>
+        <!--<span class="task-label">Summary:</span>-->
+        <%= task.summary %>
+    <% end %>
+  </div>
+
+<!--
+  <div class="col-md-4">
+    <span class="task-label">Owner:</span>
+    <%= task.owner.name %>
+  </div>
+  <div class="col-md-4">
+      <% if task.assignee %>
+        Assigned to:  <%= task.assignee.name %>
+      <% else %>
+         <em>Not assigned</em>
+      <% end %>
+  </div>
+-->
+
+</li>

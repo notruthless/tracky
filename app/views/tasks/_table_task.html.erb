@@ -1,0 +1,16 @@
+<tr>
+  <td>
+    <%= link_to task.summary, task %>
+  </td>
+
+  <td>
+    <%= link_to task.owner.name, task.owner %>
+  </td>
+  <td>
+    <% if task.assignee %>
+        <%= link_to task.assignee.name, edit_task_path(task) %>
+    <% else %>
+        <em><%= link_to "Not assigned", edit_task_path(task)%></em>
+    <% end %>
+  </td>
+</tr>
