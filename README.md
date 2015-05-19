@@ -21,16 +21,16 @@ Simplifying design decisions
 ###Configuration settings:
 ```
     # whether to send a validation email for new accounts
-    # (currently set to false for demo usage)
+    # (currently set to false for development demo usage)
   Rails.configuration.x.validate_account_activation = false
 ```
 ### To Do:
 - Lots and lots and lots of clean up.
 - Don't let users edit and assign tasks created by other people. (yeah that's a big one)
 - More clean up
-- View tests for the task views and related integration tests
+- Write tests for the task views and related integration tests
 - Didn't even look at window resize behavior except to see it's wrong.
-- Boy it's ugly
+- Boy it's ugly.
 - Better navigation - back buttons, cancel buttons, stuff like that.
 - Dates. Actually set assigned date. Show created date, modified date, assigned date. 
 - Sorting, filtering of tasks
