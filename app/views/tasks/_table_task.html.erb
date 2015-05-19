@@ -8,8 +8,17 @@
   </td>
   <td>
     <% if task.assignee %>
-        <%= link_to task.assignee.name, edit_task_path(task) %>
+        <%# TODO: Make these into popups that edit the assignee in place! %>
+        <%= if current_user.admin?
+               link_to task.assignee.name, edit_task_path(task)
+            elsif current_user == task.assignee
+              link_to task.assignee.name, edit_task_path(task)
+            else
+                task.assignee.name
+            end %>
+
     <% else %>
+        <%# TODO: Only let users assign themselves unless admin! %>
         <em><%= link_to "Not assigned", edit_task_path(task)%></em>
     <% end %>
   </td>

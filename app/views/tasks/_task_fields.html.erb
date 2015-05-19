@@ -11,5 +11,5 @@
 
 <p>
   <%= f.label :assignee %>
-  <%= f.collection_select :assignee_id, User.all, :id, :name, include_blank:"None selected", class: 'form-control' %>
+  <%= f.collection_select :assignee_id, User.all, :id, :name, include_blank:true, class: 'form-control' %>
 </p>

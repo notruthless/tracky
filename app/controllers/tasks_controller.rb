@@ -25,6 +25,8 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
+
+    #TODO: check if current_user is owner (or admin) before allowing updates
     if @task.update_attributes(task_params)
       flash[:success] = "Task updated"
       redirect_to @task

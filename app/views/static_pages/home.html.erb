@@ -1,41 +1,43 @@
 <% if logged_in? %>
     <div class="container-fluid">
-      <div class="summary row">
-        <div class="row">
-          <div class="form-button" >
+        <div class="row form-button">
+          <div class="home-form-button" >
             <%= link_to "Create task", new_task_path, class: "btn btn-small btn-primary" %>
-
           </div>
-        </div>
-
-
-        <div class="col-md-8">
-          <h4> Displaying <%= @tasks.size %> tasks
+          </div>
+        <% if @tasks.empty? %>
+          <div class="row">
+            <em> No tasks, create some!</em>
+          </div>
+        <% else %>
+          <div class="row">
+          <h4> Displaying <%= @tasks.size %> <%= 'task'.pluralize(@total_num_tasks) %>
               <% if @tasks.size < @total_num_tasks %>
               (of <%= @total_num_tasks %>)
               <% end %>
           </h4>
         </div>
-      </div>
-      <%=  will_paginate @tasks %>
+        <div class="row">
+          <div class="panel panel-default">
 
-      <div class="panel panel-default">
-      <!-- div class="panel-heading">Panel heading</div -->
-      <table class="table tablesorter table table-striped table-hover table-condensed">
-        <thead>
-        <tr>
-          <th>Task summary</th>
-          <th>Task creator</th>
-          <th>assigned to</th>
-          <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        <%= render partial:"tasks/table_task", collection:@tasks, as: :task %>
-        </tbody>
-      </table>
-        <%=  will_paginate @tasks %>
-      </div>
+            <!-- div class="panel-heading">Panel heading</div -->
+          <table class="table tablesorter table table-striped table-hover table-condensed">
+            <thead>
+            <tr>
+              <th>Task summary</th>
+              <th>Task creator</th>
+              <th>assigned to</th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <%= render partial:"tasks/table_task", collection:@tasks, as: :task %>
+            </tbody>
+          </table>
+          </div>
+          <%=  will_paginate @tasks %>
+        </div>
+      <% end %>
     </div>
 <% else %>
   <div class="center jumbotron">
