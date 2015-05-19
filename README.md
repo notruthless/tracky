@@ -11,7 +11,7 @@ Simplifying design decisions
 
 ### Running the app
 - Must have RVM and ruby-2.1.2 installed
-- Clone the repo
+- `git clone git@github.com:notruthless/tracky.git && cd tracky`
 - `bundle install`
 - `bundle exec rake db:migrate`
 - `bundle exec rake db:seed` (if you want sample users)
