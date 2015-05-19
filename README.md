@@ -6,9 +6,8 @@ Toy Task Tracking App (based on my [Starter Rails App](https://github.com/notrut
 - Assign a user to a task
 
 Simplifying design decisions
-- Each task can have a single owner and and a single assignee
+- Each task has a single owner and and a single assignee
 - Users can be assigned to tasks they own.
-
 
 ### Running the app
 - Must have RVM and ruby-2.1.2 installed
@@ -33,3 +32,5 @@ Simplifying design decisions
 - Didn't even look at window resize behavior except to see it's wrong.
 - Boy it's ugly
 - Better navigation - back buttons, cancel buttons, stuff like that.
+- Dates. Actually set assigned date. Show created date, modified date, assigned date. 
+- Sorting, filtering of tasks
