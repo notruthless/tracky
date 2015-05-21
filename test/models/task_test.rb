@@ -34,6 +34,13 @@ class TaskTest < ActiveSupport::TestCase
   end
 
   test "assignee is null when assignee user is deleted" do
+    user2 = users(:user2)
+    refute_includes(user2.assigned_tasks, @task)
+    assert(@task.update(assignee:user2))
 
+    assert_includes(user2.reload.assigned_tasks, @task)
+
+    user2.destroy
+    assert_nil(@task.reload.assignee)
   end
 end
